@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1 Month Anniversary</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('us.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(255, 20, 147, 0.3);
+      width: 90%;
+      max-width: 700px;
+      padding: 40px 30px;
+      text-align: center;
+      border: 3px solid #ff69b4;
+      animation: fadeIn 2s ease forwards, glow 3s infinite alternate;
+      position: relative;
+      z-index: 10;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #ff69b4;
+      margin: 20px auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #e91e63;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #e91e63;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.8s infinite;
+      margin: 20px auto;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.8;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 4s;
+    }
+
+    .emoji-line {
+      font-size: 26px;
+      margin-top: 25px;
+      animation: fadeIn 3s ease forwards;
+      animation-delay: 5s;
+    }
+
+    .celebrate {
+      font-size: 20px;
+      color: #d63384;
+      margin-top: 25px;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+
+    hr {
+      margin: 20px auto;
+      width: 60%;
+      border: 1px dashed #ff69b4;
+    }
+
+    /* Animation Section */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent }
+      50% { border-color: #e91e63 }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 15px #ffb6c1; }
+      100% { box-shadow: 0 0 30px #ff1493; }
+    }
+
+    /* Falling Hearts */
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 24px;
+      color: #ff69b4;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="us.jpg" alt="Us" class="profile-pic" />
+    <h1>Happy 1st Month Anniversary!</h1>
+    <p>One month ago, we started a new chapter of our lives together. Every single moment has been magical ✨. Thank you for being my smile, my soulmate, and my forever 💕.</p>
+    <hr />
+    <p>Here’s to the cuddles, late-night talks, morning smiles, and forever walks. <br />Let’s keep making memories 💑</p>
+    <div class="emoji-line">🌸💖✨💍💗🌹</div>
+    <div class="celebrate">I love you more every day 💘</div>
+  </div>
+
+  <script>
+    // Generate Falling Hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
